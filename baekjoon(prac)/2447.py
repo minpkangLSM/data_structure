@@ -9,7 +9,7 @@ def star_link(n):
         return
 
     d = n//3
-    star_link(n//3)
+    star_link(d)
     for i in range(3):
         for j in range(3):
             if i==1 and j==1: continue
@@ -24,4 +24,4 @@ for i in range(len(star_map)):
             print('*', end="")
         else :
             print(" ", end="")
-    print("\n")
+    print()
