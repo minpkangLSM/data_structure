@@ -9,7 +9,7 @@ class DList :
         self.head = self.Node(None, None, None)
         self.tail = self.Node(None, self.head, None)
         self.head.next = self.tail
-        self.size += 1
+        self.size = 0
 
     def size(self):return self.size()
     def is_empty(self):return self.size==0
@@ -40,7 +40,7 @@ class DList :
         if self.is_empty():
             raise EmptyError
         else :
-            p = self.head
+            p = self.head.next
             while p != self.tail:
                 if p.next != self.tail:
                     print(p.item, "<=>", end="")
@@ -50,3 +50,12 @@ class DList :
 
 class EmptyError(Exception):
     pass
+
+if __name__ == "__main__":
+    s = DList()
+    s.insert_after("apple", s.head)
+    s.insert_before("orange", s.tail)
+    s.insert_before("cherry", s.tail)
+    s.print_list()
+    s.delete(s.tail.prev.prev)
+    s.print_list()
