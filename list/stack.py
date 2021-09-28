@@ -9,7 +9,7 @@ def peek(stack):
 
 def pop(stack):
     if len(stack)!=0:
-        item = stack.pop()
+        item = stack.pop(-1)
         return item
 
 # stack = []
