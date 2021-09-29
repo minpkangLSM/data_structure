@@ -13,3 +13,4 @@ def remains(x, n, d):
             return temp*temp%d
         else :
             return temp*temp*x%d
+ 
