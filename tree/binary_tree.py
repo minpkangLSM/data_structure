@@ -87,6 +87,11 @@ class binary_tree:
             if t.right:
                 insert(t.right)
 
+    def height(self, root):
+        if root == None:
+            return 0
+        return max(self.height(root.left), self.height(root.right))+1
+
 if __name__ == "__main__":
     t = binary_tree()
     front = None
