@@ -23,6 +23,8 @@ def bfs(start):
     return length
 
 length = bfs(1)
+length[1] = 0
 max_index = length.index(max(length))
 length = bfs(max_index)
+length[max_index] = 0
 print(max(length))
