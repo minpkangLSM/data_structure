@@ -1,30 +1,28 @@
 # 2021.10.12.
-import sys
-n = int(input())
-
 fibo_dp = []
-for n in range(0, 40):
-    if n == 0:
+for n in range(0, 41):
+    if n==0:
         fibo_dp.append(n)
-    elif n == 1 :
+    elif n==1:
         fibo_dp.append(n)
-    elif n == 2:
+    elif n==2:
         fibo_dp.append(1)
-    else :
+    else:
         fibo_dp.append(fibo_dp[n-2]+fibo_dp[n-1])
 
-for _ in range(n):
+def f_dp(num):
+    if num==0 :
+        print(1, 0)
+    elif num==1:
+        print(0, 1)
+    else:
+        print(fibo_dp[num-1], fibo_dp[num])
 
-    test_case = int(sys.stdin.readline())
-    def f_dp(n):
-        if n==0 :
-            print(1, 0)
-            return
-        elif n==1 :
-            print(0, 1)
-            return
-        else :
-            print(fibo_dp[n-2], fibo_dp[n])
-            return
-    f_dp(test_case)
+n = int(input())
+tc = []
+for _ in range(n):
+    tc.append(int(input()))
+
+for i in tc :
+    f_dp(i)
 
